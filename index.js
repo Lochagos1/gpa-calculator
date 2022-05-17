@@ -1,5 +1,6 @@
 const isLocalhost = location.hostname === 'localhost' || location.hostname === '127.0.0.1';
 const STORAGE_API_HOST = isLocalhost ? `http://localhost:3000` : `https://keyval-store.herokuapp.com`;
+
 const letterGrades = {
     4: 'A',
     3.5: 'B+',
@@ -31,8 +32,10 @@ window.addEventListener('DOMContentLoaded', function () {
     // Generate sharing link
      //const generateLinkButton = document.querySelector('#generate-link');
     const setKeyButton = document.querySelector('#set-key');
-    const shareLinkInput = document.querySelector('#share-link');
+    const shareLinkInput = document.querySelector('#user-key');
     const timeGeneratedField = document.querySelector('#time-generated');
+    const X = document.querySelector('#user-key');
+    //const X = addUserKey.querySelector('#user-key');
 
     // All intractable controls (e.g. input, buttons, etc...)
     const controls = [
@@ -145,7 +148,8 @@ window.addEventListener('DOMContentLoaded', function () {
     setKeyButton.onclick = function () {
         disablePage();
         const modules = getModules();
-        fetch(`${STORAGE_API_HOST}/storage`, {
+        const userKey = X.value;
+        fetch(`${STORAGE_API_HOST}/storage?key= ` + userKey , {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
