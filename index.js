@@ -149,7 +149,7 @@ window.addEventListener('DOMContentLoaded', function () {
         disablePage();
         const modules = getModules();
         const userKey = X.value;
-        fetch(`${STORAGE_API_HOST}/storage?key= ` + userKey , {
+        fetch(`${STORAGE_API_HOST}/storage?key=${userKey}` , {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
