@@ -29,7 +29,8 @@ window.addEventListener('DOMContentLoaded', function () {
     const gradeInput = addModuleForm.querySelector('#grade');
 
     // Generate sharing link
-    const generateLinkButton = document.querySelector('#generate-link');
+     //const generateLinkButton = document.querySelector('#generate-link');
+    const setKeyButton = document.querySelector('#set-key');
     const shareLinkInput = document.querySelector('#share-link');
     const timeGeneratedField = document.querySelector('#time-generated');
 
@@ -39,7 +40,7 @@ window.addEventListener('DOMContentLoaded', function () {
         moduleNameInput,
         creditInput,
         gradeInput,
-        generateLinkButton,
+        setKeyButton,
     ];
 
     /**
@@ -140,7 +141,8 @@ window.addEventListener('DOMContentLoaded', function () {
     /**
      * Uploads modules data to storage and generate sharing link based on returned key
      */
-    generateLinkButton.onclick = function () {
+  //generateLinkButton.onclick = function () {
+    setKeyButton.onclick = function () {
         disablePage();
         const modules = getModules();
         fetch(`${STORAGE_API_HOST}/storage`, {
