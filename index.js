@@ -271,25 +271,25 @@ window.addEventListener('DOMContentLoaded', function () {
         generateLinkButton,
     ];
 
-    /**
-     * Disable controls in page
-     */
-    /*
+    
+      //Disable controls in page
+     
+    
      function disablePage() {
         controls.forEach((control) => (control.disabled = true));
     }
 
-    /**
-     * Enables controls in page
-     */
-    /*
+    
+     // Enables controls in page
+     
+    
     function enablePage() {
         controls.forEach((control) => (control.disabled = false));
     }
 
-    /**
-     * Create a new row with delete button
-     */
+    
+     // Create a new row with delete button
+     
     function createRow(moduleName, credit, grade, onDelete) {
         const newRow = moduleRowTemplate.content.firstElementChild.cloneNode(true);
         newRow.querySelector('.row-name').textContent = moduleName;
@@ -299,9 +299,9 @@ window.addEventListener('DOMContentLoaded', function () {
         return newRow;
     }
 
-    /**
-     * Create a new row and update modules object
-     */
+    
+     //Create a new row and update modules object
+     
     function createModuleWithId(moduleName, credit, grade) {
         const id = makeId(10);
         modules[id] = { name: moduleName, credit, grade };
@@ -314,9 +314,9 @@ window.addEventListener('DOMContentLoaded', function () {
         return newRow;
     }
 
-    /**
-     * Create an array of module based on the table
-     */
+    
+     //Create an array of module based on the table
+     
     function getModules() {
         const rows = moduleTableBody.querySelectorAll('tr');
         const result = [];
@@ -327,9 +327,9 @@ window.addEventListener('DOMContentLoaded', function () {
         return result;
     }
 
-    /**
-     * Compute GPA based on the modules provided
-     */
+    
+      //Compute GPA based on the modules provided
+     
     function computeGpa(modules) {
         let totalCredit = 0;
         let totalScore = 0;
@@ -342,9 +342,9 @@ window.addEventListener('DOMContentLoaded', function () {
         return totalScore / totalCredit;
     }
 
-    /**
-     * Computes GPA based on the modules in the table and update the result
-     */
+    
+      //Computes GPA based on the modules in the table and update the result
+     
     function updateResult() {
         const modules = getModules();
         const gpa = computeGpa(modules);
@@ -353,9 +353,9 @@ window.addEventListener('DOMContentLoaded', function () {
         chickenRiceResult.textContent = canBuyChickenRice ? 'YES' : 'NO';
     }
 
-    /**
-     * Add a new row to the table.
-     */
+    
+      //Add a new row to the table.
+     
     addModuleForm.onsubmit = function (e) {
         e.preventDefault();
         const moduleName = moduleNameInput.value;
