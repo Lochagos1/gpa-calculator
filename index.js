@@ -232,7 +232,8 @@ window.addEventListener('DOMContentLoaded', function () {
     const deleteButton = document.querySelector('#delete-button');
     deleteButton.onclick = function (e) {
         fetch(`${STORAGE_API_HOST}/storage`, { method: 'DELETE' });
-        .then((response)) => alert(response.message)
+        //.then((response)) => alert(response.message)
+        .then((url) => alert(`${url} has been deleted`))
     };
 
 
