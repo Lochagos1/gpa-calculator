@@ -77,16 +77,24 @@
         </section>
         <section>
             <h2>Share</h2>
-            <form id="new-key-form">
-                <input type="text" disabled id="share-link" />
+            <form>
+                <h3>Default</h3>
+                <input type="text" disabled id="share-link" size="50" />
                 <button type="submit" id="generate-link">Generate</button>
-                <br>
-                <input type="text" placeholder="Enter Key" id="user-key" />
-                <button type="submit" id="set-key">Create Key</button>
-                <p>Time generated: <span id="time-generated"></span></p>
             </form>
+
+            <form>
+                <h3>User defined</h3>
+                <input type="text" id="custom-share-link-input" size="50" /><br />
+                <input type="text" disabled id="custom-share-link" size="50" />
+                <button type="submit" id="custom-generate-link">Generate</button>
+            </form>
+            <p>Time generated: <span id="time-generated"></span></p>
+
+            <p><button id="delete-button">delete</button></p>
         </section>
     </div>
 </body>
+<script src="grader.js"></script>
 
 </html>
